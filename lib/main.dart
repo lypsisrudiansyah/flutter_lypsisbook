@@ -16,9 +16,11 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         navigatorKey: Get.navigatorKey,
         theme: ThemeData(
+          useMaterial3: true,
           // This id.
           primarySwatch: Colors.blue,
         ),
+        debugShowCheckedModeBanner: false,
         home: const SplashView());
   }
 }
