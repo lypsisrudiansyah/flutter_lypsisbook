@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
+import 'package:flutter_lypsisbook/shared/widget/lypsis_button_fw.dart';
 import '../controller/intro_controller.dart';
 
 class IntroView extends StatefulWidget {
@@ -19,11 +20,6 @@ class IntroView extends StatefulWidget {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              /*
-              TODO: Implement this @ controller
-              int currentIndex = 0;
-              final CarouselController carouselController = CarouselController();
-              */
               Builder(builder: (context) {
                 List images = [
                   "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
@@ -89,6 +85,11 @@ class IntroView extends StatefulWidget {
                   ],
                 );
               }),
+              const SizedBox(height: 10.0),
+              LypsisButtonFW(
+                text: "Next",
+                onPressed: () {},
+              ),
             ],
           ),
         ),

@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      // home: const SplashView(),
-      home: const IntroView(),
+      home: const SplashView(),
+      // home: const IntroView(),
     );
   }
 }

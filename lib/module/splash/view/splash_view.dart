@@ -25,10 +25,9 @@ class SplashView extends StatefulWidget {
               fit: BoxFit.fill,
             ),
           ).animate().shake(
-                duration: const Duration(
-                  milliseconds: 1000,
-                ),
-              ),
+                  duration: const Duration(
+                milliseconds: 1000,
+              )),
         ],
       ),
     );
