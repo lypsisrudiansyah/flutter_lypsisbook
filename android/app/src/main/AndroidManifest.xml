@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lypsisrudiansyah.flutter_lypsisbook">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="flutter_lypsisbook"
         android:name="${applicationName}"
