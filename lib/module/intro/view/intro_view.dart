@@ -11,81 +11,123 @@ class IntroView extends StatefulWidget {
     controller.view = this;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Intro"),
-        actions: const [],
-      ),
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(5.0),
           child: Column(
             children: [
               Builder(builder: (context) {
-                List images = [
-                  "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-                  "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-                  "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=781&q=80",
-                  "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",
-                  "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=710&q=80",
+                /* List images = [
+                  "https://img.freepik.com/free-vector/boy-student-sitting-stack-books-with-laptop-flat-icon-illustration_1284-64037.jpg",
+                  "https://img.freepik.com/free-vector/learning-concept-illustration_114360-6186.jpg",
+                  "https://img.freepik.com/free-vector/students-watching-webinar-computer-studying-online_74855-15522.jpg",
+                  // "https://img.freepik.com/free-vector/focused-tiny-people-reading-books_74855-5836.jpg",
+                  // "https://img.freepik.com/free-vector/students-watching-webinar-computer-studying-online_74855-15522.jpg"
+                ]; */
+                List<Map<String, dynamic>> carouselItems = [
+                  {
+                    "title": "Title 1",
+                    "description":
+                        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et",
+                    "image": "https://img.freepik.com/free-vector/boy-student-sitting-stack-books-with-laptop-flat-icon-illustration_1284-64037.jpg",
+                  },
+                  {
+                    "title": "Title 2",
+                    "description":
+                        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,",
+                    "image": "https://img.freepik.com/free-vector/learning-concept-illustration_114360-6186.jpg",
+                  },
+                  {
+                    "title": "Title 3",
+                    "description":
+                        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa",
+                    "image": "https://img.freepik.com/free-vector/students-watching-webinar-computer-studying-online_74855-15522.jpg",
+                  },
+                  // Add more objects as needed
                 ];
 
-                return Column(
-                  children: [
-                    CarouselSlider(
-                      carouselController: controller.carouselController,
-                      options: CarouselOptions(
-                        height: MediaQuery.of(context).size.height * 0.8,
-                        autoPlay: true,
-                        enlargeCenterPage: true,
-                        onPageChanged: (index, reason) {
-                          controller.currentIndex = index;
-                          controller.setState(() {});
-                        },
-                      ),
-                      items: images.map((imageUrl) {
-                        return Builder(
-                          builder: (BuildContext context) {
-                            return Container(
-                              width: MediaQuery.of(context).size.width,
-                              margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                              decoration: BoxDecoration(
-                                color: Colors.amber,
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(10.0),
-                                ),
-                                image: DecorationImage(
-                                  image: NetworkImage(
-                                    imageUrl,
-                                  ),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            );
-                          },
-                        );
-                      }).toList(),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: images.asMap().entries.map((entry) {
-                        return GestureDetector(
-                          onTap: () => controller.carouselController.animateToPage(entry.key),
-                          child: Container(
-                            width: 12.0,
-                            height: 12.0,
-                            margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: (Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black)
-                                    .withOpacity(controller.currentIndex == entry.key ? 0.9 : 0.4)),
+                return SizedBox(
+                  // color: Colors.red,
+                  height: MediaQuery.of(context).size.height * 0.9,
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: CarouselSlider(
+                          carouselController: controller.carouselController,
+                          options: CarouselOptions(
+                            height: 500,
+                            autoPlay: true,
+                            enlargeCenterPage: true,
+                            onPageChanged: (index, reason) {
+                              controller.currentIndex = index;
+                              controller.setState(() {});
+                            },
                           ),
-                        );
-                      }).toList(),
-                    ),
-                  ],
+                          items: carouselItems.map((item) {
+                            return Builder(
+                              builder: (BuildContext context) {
+                                return Column(
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        width: MediaQuery.of(context).size.width,
+                                        margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                                        decoration: BoxDecoration(
+                                          borderRadius: const BorderRadius.all(
+                                            Radius.circular(10.0),
+                                          ),
+                                          image: DecorationImage(
+                                            image: NetworkImage(
+                                              item['image']!,
+                                            ),
+                                            fit: BoxFit.fitWidth,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Text(
+                                      item['title']!,
+                                      style: const TextStyle(
+                                        fontSize: 17.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 10),
+                                    Text(
+                                      item['description']!,
+                                      style: const TextStyle(
+                                        fontSize: 12.0,
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          }).toList(),
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: carouselItems.asMap().entries.map((entry) {
+                          return GestureDetector(
+                            onTap: () => controller.carouselController.animateToPage(entry.key),
+                            child: Container(
+                              width: 12.0,
+                              height: 12.0,
+                              margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: (Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black)
+                                      .withOpacity(controller.currentIndex == entry.key ? 0.9 : 0.4)),
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                    ],
+                  ),
                 );
               }),
-              const SizedBox(height: 10.0),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.02),
               LypsisButtonFW(
                 text: "Next",
                 onPressed: () {},
