@@ -17,19 +17,22 @@ class RTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16.0),
-      decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)), color: disabledColor),
-      child: TextFormField(
-        decoration: InputDecoration.collapsed(
-          hintText: hintText,
-          hintStyle: TextStyle(
-            color: hintColor ?? Colors.grey,
-          ),
+    return TextFormField(
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: disabledColor,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+          borderSide: BorderSide.none,
         ),
-        onChanged: onChanged,
-        onFieldSubmitted: onSubmit,
+        hintText: hintText,
+        hintStyle: TextStyle(
+          color: hintColor ?? Colors.grey,
+        ),
+        contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
       ),
+      onChanged: onChanged,
+      onFieldSubmitted: onSubmit,
     );
   }
 }
