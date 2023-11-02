@@ -7,9 +7,11 @@ class LypsisButtonFW extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final Color? color;
+  final Color? textColor;
   final bool isDisabled;
 
-  const LypsisButtonFW({Key? key, required this.text, required this.onPressed, this.color, this.isDisabled = false}) : super(key: key);
+  const LypsisButtonFW({Key? key, required this.text, required this.onPressed, this.color, this.isDisabled = false, this.textColor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +20,14 @@ class LypsisButtonFW extends StatelessWidget {
       height: 40,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          foregroundColor: Colors.white,
+          foregroundColor: textColor ?? Colors.white,
           backgroundColor: (color ?? primaryColor),
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(5.0),
             ),
           ),
+          // textStyle: TextStyle(color: textColor ?? Colors.white),
         ),
         onPressed: isDisabled == false ? onPressed : null,
         child: Text(text),

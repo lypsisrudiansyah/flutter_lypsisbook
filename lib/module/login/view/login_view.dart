@@ -5,7 +5,6 @@ import 'package:flutter_lypsisbook/shared/widget/r_text_field.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../shared/widget/lypsis_button_fw.dart';
 import '../../../shared/widget/r_password_field.dart';
-import '../controller/login_controller.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -60,19 +59,6 @@ class LoginView extends StatefulWidget {
                   ],
                 ),
                 SizedBox(height: mqH * 0.16),
-                /* Container(
-                  padding: const EdgeInsets.all(16.0),
-                  decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)), color: disabledColor),
-                  child: TextFormField(
-                    decoration: const InputDecoration.collapsed(
-                      hintText: "Email",
-                      hintStyle: TextStyle(
-                        color: secondaryColor,
-                      ),
-                    ),
-                    onChanged: (value) {},
-                  ),
-                ), */
                 RTextField(
                   hintText: 'Email',
                   hintColor: secondaryColor,
@@ -96,8 +82,12 @@ class LoginView extends StatefulWidget {
                 SizedBox(height: mqH * 0.25),
                 LypsisButtonFW(
                   text: "Sign Up ",
-                  onPressed: () {},
-                  isDisabled: true,
+                  color: disabledColor,
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterView()));
+                  },
+                  // isDisabled: true,
+                  textColor: disabledTextColor,
                 ),
               ],
             ),
