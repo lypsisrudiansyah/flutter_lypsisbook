@@ -12,7 +12,7 @@ class LoginView extends StatefulWidget {
   Widget build(context, LoginController controller) {
     controller.view = this;
     var mqH = MediaQuery.of(context).size.height;
-    var mqW = MediaQuery.of(context).size.height;
+    var mqW = MediaQuery.of(context).size.width;
 
     return Scaffold(
       body: SafeArea(
@@ -54,7 +54,7 @@ class LoginView extends StatefulWidget {
                     ),
                     Image.asset(
                       'assets/images/lypsisbook-480.png',
-                      width: mqW * 0.13,
+                      width: mqW * 0.2,
                     ),
                   ],
                 ),
