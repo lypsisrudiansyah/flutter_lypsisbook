@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
 import 'package:flutter_lypsisbook/shared/theme_config.dart';
@@ -49,31 +50,35 @@ class RegisterView extends StatefulWidget {
               const SizedBox(height: 20.0),
               RichText(
                 textAlign: TextAlign.center,
-                text: const TextSpan(
+                text: TextSpan(
                   text: '',
                   // style: DefaultTextStyle.of(context).style,
-                  style: TextStyle(),
+                  style: const TextStyle(),
                   children: <TextSpan>[
-                    TextSpan(
+                    const TextSpan(
                         text: 'By signing up, you agree to our \n',
                         style: TextStyle(
                           color: disabledColor,
                         )),
-                    TextSpan(
+                    const TextSpan(
                       text: 'Terms',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: primaryColor,
                       ),
                     ),
-                    TextSpan(
+                    const TextSpan(
                         text: ' and ',
                         style: TextStyle(
                           color: disabledColor,
                         )),
                     TextSpan(
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          // print('Privacy');
+                        },
                       text: 'Privacy',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         color: primaryColor,
                       ),
@@ -82,7 +87,19 @@ class RegisterView extends StatefulWidget {
                 ),
               ),
               const SizedBox(height: 10.0),
-              const Text(
+            ],
+          ),
+        ),
+      ),
+      // & Notes : We can also make button aligned to bottom when on Scrollable Widget, using Stack and Positioned The button will be always at the bottom of the screen.
+      bottomNavigationBar: Container(
+        width: mqW,
+        padding: const EdgeInsets.all(20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            InkWell(
+              child: Text(
                 "I already have an account",
                 style: TextStyle(
                   fontSize: 16.0,
@@ -90,8 +107,8 @@ class RegisterView extends StatefulWidget {
                   color: primaryColor,
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
