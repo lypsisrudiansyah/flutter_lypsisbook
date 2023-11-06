@@ -20,4 +20,19 @@
     },
     "peacock.color": "#C12FFF",
     "editor.formatOnSave": true,
+    "editor.fontLigatures": false,
+    /* "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": true
+        },
+        "editor.formatOnType": true,
+        
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false,
+        "editor.defaultFormatter": "Dart-Code.dart-code"
+  } */
 }

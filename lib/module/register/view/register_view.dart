@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
+import 'package:flutter_lypsisbook/shared/widget/r_text_field.dart';
 import '../controller/register_controller.dart';
 
 class RegisterView extends StatefulWidget {
@@ -7,6 +8,7 @@ class RegisterView extends StatefulWidget {
 
   Widget build(context, RegisterController controller) {
     controller.view = this;
+    var mqW = MediaQuery.of(context).size.height;
 
     return Scaffold(
       appBar: AppBar(
@@ -14,10 +16,21 @@ class RegisterView extends StatefulWidget {
         actions: const [],
       ),
       body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(10.0),
+        child: SizedBox(
+          width: mqW,
           child: Column(
-            children: const [],
+            children: [
+              Image.asset(
+                'assets/images/lypsisbook-480.png',
+                width: mqW * 0.16,
+              ),
+              const SizedBox(height: 20.0),
+              RTextField(
+                // controller: controller.nameController,
+                hintText: "Name",
+                onChanged: (value) {},
+              ),
+            ],
           ),
         ),
       ),
