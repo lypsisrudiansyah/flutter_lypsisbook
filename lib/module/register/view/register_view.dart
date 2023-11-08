@@ -4,7 +4,7 @@ import 'package:flutter_lypsisbook/core.dart';
 import 'package:flutter_lypsisbook/shared/theme_config.dart';
 import 'package:flutter_lypsisbook/shared/widget/lypsis_button_fw.dart';
 import 'package:flutter_lypsisbook/shared/widget/r_text_field.dart';
-import '../controller/register_controller.dart';
+import 'package:flutter_lypsisbook/state_util.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({Key? key}) : super(key: key);
@@ -92,14 +92,17 @@ class RegisterView extends StatefulWidget {
         ),
       ),
       // & Notes : We can also make button aligned to bottom when on Scrollable Widget, using Stack and Positioned The button will be always at the bottom of the screen.
+      // & Notes 2 : Idea to using LayoutBuilder as parent singleChildScrollView, to get the height of the screen, and then we can use it to make the button always at the bottom of the screen.
+      // & Notes 3 : Next Idea is Column [Scrollable, Flexible/Expanded 80% -> Button 20%]
       bottomNavigationBar: Container(
         width: mqW,
         padding: const EdgeInsets.all(20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             InkWell(
-              child: Text(
+              onTap: () => Get.to(const LoginView()),
+              child: const Text(
                 "I already have an account",
                 style: TextStyle(
                   fontSize: 16.0,
