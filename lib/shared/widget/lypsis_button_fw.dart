@@ -17,7 +17,7 @@ class LypsisButtonFW extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width,
-      height: 40,
+      height: MediaQuery.of(context).size.height * .05,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           foregroundColor: textColor ?? Colors.white,

@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // home: const SplashView(),
       home: const LoginView(),
-      // home: const RegisterView(),
+      // home: const ForgotPasswordView(),
     );
   }
 }
