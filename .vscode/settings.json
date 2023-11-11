@@ -21,6 +21,12 @@
     "peacock.color": "#C12FFF",
     "editor.formatOnSave": true,
     "editor.fontLigatures": false,
+    "betterCommentsThinfsMeanSymbol": {
+        "*": "Notes Ungu",
+        "Todos": "Kuning",
+        "?": "Orange Bertenye",
+        "&": "Understandinng Warna Hijau Gelap"
+    },
     /* "[dart]": {
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
-import 'package:flutter_lypsisbook/state_util.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,8 +21,8 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       // home: const SplashView(),
-      home: const LoginView(),
-      // home: const ForgotPasswordView(),
+      // home: const LoginView(),
+      home: const DashboardView(),
     );
   }
 }
