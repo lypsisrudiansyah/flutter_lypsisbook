@@ -1,11 +1,6 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
-import 'package:flutter_lypsisbook/shared/theme_config.dart';
-import 'package:flutter_lypsisbook/shared/widget/r_text_field.dart';
-import 'package:flutter_lypsisbook/state_util.dart';
-import '../../../shared/widget/lypsis_button_fw.dart';
-import '../../../shared/widget/r_password_field.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -79,7 +74,7 @@ class LoginView extends StatefulWidget {
                         onTogglePasswordVisibility: (value) => print('show password: $value'),
                       ),
                       SizedBox(height: mqH * 0.03),
-                      LypsisButtonFW(text: "Login", onPressed: () {}),
+                      LypsisButtonFW(text: "Login", onPressed: () => Get.offAll(const DashboardView())),
                       SizedBox(height: mqH * 0.03),
                       InkWell(
                         onTap: () => Get.to(const ForgotPasswordView()),
