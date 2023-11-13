@@ -1,6 +1,7 @@
 {
     "modules": [
-        "dashboard"
+        "dashboard",
+        "main_navigation"
     ],
     "module_directory_name": "module",
     "experimental_mode": false,
