@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
 import '../controller/dashboard_controller.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DashboardView extends StatefulWidget {
   const DashboardView({Key? key}) : super(key: key);
@@ -15,8 +16,9 @@ class DashboardView extends StatefulWidget {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(15.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // * Widget Search
               Container(
@@ -55,6 +57,7 @@ class DashboardView extends StatefulWidget {
                 ),
               ),
               const SizedBox(height: 10),
+              // * Widget Banner
               Container(
                 height: 160.0,
                 decoration: const BoxDecoration(
@@ -116,6 +119,7 @@ class DashboardView extends StatefulWidget {
                 ),
               ),
               const SizedBox(height: 10),
+              // * Widget Menu
               LayoutBuilder(
                 builder: (context, constraint) {
                   List menus = [
@@ -206,6 +210,34 @@ class DashboardView extends StatefulWidget {
                           ),
                         );
                       },
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 10),
+              const Text(
+                "Products",
+                style: TextStyle(
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 12),
+              ListView.builder(
+                itemCount: 3,
+                shrinkWrap: true,
+                physics: const ScrollPhysics(),
+                itemBuilder: (BuildContext context, int index) {
+                  return Card(
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.grey[200],
+                        backgroundImage: const NetworkImage(
+                          "https://i.ibb.co/QrTHd59/woman.jpg",
+                        ),
+                      ),
+                      title: const Text("Jessica Doe"),
+                      subtitle: const Text("Programmer"),
                     ),
                   );
                 },
