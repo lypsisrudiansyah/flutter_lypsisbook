@@ -24,7 +24,7 @@ class LypsisButtonFW extends StatelessWidget {
           backgroundColor: (color ?? primaryColor),
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
-              Radius.circular(5.0),
+              Radius.circular(10.0),
             ),
           ),
           // textStyle: TextStyle(color: textColor ?? Colors.white),
