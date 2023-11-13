@@ -1,7 +1,8 @@
 {
     "modules": [
         "dashboard",
-        "main_navigation"
+        "main_navigation",
+        "profile"
     ],
     "module_directory_name": "module",
     "experimental_mode": false,

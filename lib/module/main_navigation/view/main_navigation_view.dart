@@ -21,9 +21,7 @@ class MainNavigationView extends StatefulWidget {
             Container(
               color: Colors.blue,
             ),
-            Container(
-              color: Colors.purple,
-            ),
+            const ProfileView()
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(

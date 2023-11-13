@@ -15,6 +15,8 @@ export 'package:flutter_lypsisbook/module/login/controller/login_controller.dart
 export 'package:flutter_lypsisbook/module/login/view/login_view.dart';
 export 'package:flutter_lypsisbook/module/main_navigation/controller/main_navigation_controller.dart';
 export 'package:flutter_lypsisbook/module/main_navigation/view/main_navigation_view.dart';
+export 'package:flutter_lypsisbook/module/profile/controller/profile_controller.dart';
+export 'package:flutter_lypsisbook/module/profile/view/profile_view.dart';
 export 'package:flutter_lypsisbook/module/register/controller/register_controller.dart';
 export 'package:flutter_lypsisbook/module/register/view/register_view.dart';
 export 'package:flutter_lypsisbook/module/splash/controller/splash_controller.dart';
