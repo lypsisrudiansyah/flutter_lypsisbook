@@ -2,7 +2,10 @@
     "modules": [
         "dashboard",
         "main_navigation",
-        "profile"
+        "profile",
+        "product_list",
+        "product_detail",
+        "edit_profile"
     ],
     "module_directory_name": "module",
     "experimental_mode": false,
