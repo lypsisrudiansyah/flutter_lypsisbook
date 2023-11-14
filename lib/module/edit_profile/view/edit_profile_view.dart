@@ -1,17 +1,17 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
-import '../controller/dashboard_controller.dart';
+import '../controller/edit_profile_controller.dart';
 
-class DashboardView extends StatefulWidget {
-    const DashboardView({Key? key}) : super(key: key);
+class EditProfileView extends StatefulWidget {
+    const EditProfileView({Key? key}) : super(key: key);
 
-    Widget build(context, DashboardController controller) {
+    Widget build(context, EditProfileController controller) {
     controller.view = this;
 
     return Scaffold(
         appBar: AppBar(
-        title: const Text("Dashboard"),
+        title: const Text("EditProfile"),
         actions: const [],
         ),
         body: SingleChildScrollView(
@@ -26,6 +26,6 @@ class DashboardView extends StatefulWidget {
     }
 
     @override
-    State<DashboardView> createState() => DashboardController();
+    State<EditProfileView> createState() => EditProfileController();
 }
     
