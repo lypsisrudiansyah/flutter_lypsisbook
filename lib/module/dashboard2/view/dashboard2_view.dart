@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
-import '../controller/dashboard2_controller.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Dashboard2View extends StatefulWidget {
@@ -96,7 +95,7 @@ class Dashboard2View extends StatefulWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              "30%",
+                              "25%",
                               style: GoogleFonts.oswald(
                                 fontSize: 30.0,
                                 color: Colors.white,
@@ -124,11 +123,6 @@ class Dashboard2View extends StatefulWidget {
                 builder: (context, constraint) {
                   List menus = [
                     {
-                      "icon": "https://cdn-icons-png.flaticon.com/128/878/878052.png",
-                      "label": "Burger",
-                      "onTap": () {},
-                    },
-                    {
                       "icon": "https://cdn-icons-png.flaticon.com/128/3595/3595455.png",
                       "label": "Pizza",
                       "onTap": () {},
@@ -139,18 +133,23 @@ class Dashboard2View extends StatefulWidget {
                       "onTap": () {},
                     },
                     {
-                      "icon": "https://cdn-icons-png.flaticon.com/128/8060/8060549.png",
-                      "label": "Meat",
-                      "onTap": () {},
-                    },
-                    {
                       "icon": "https://cdn-icons-png.flaticon.com/128/454/454570.png",
                       "label": "Soup",
                       "onTap": () {},
                     },
                     {
+                      "icon": "https://cdn-icons-png.flaticon.com/128/878/878052.png",
+                      "label": "Burger",
+                      "onTap": () {},
+                    },
+                    {
                       "icon": "https://cdn-icons-png.flaticon.com/128/2965/2965567.png",
                       "label": "Dessert",
+                      "onTap": () {},
+                    },
+                    {
+                      "icon": "https://cdn-icons-png.flaticon.com/128/8060/8060549.png",
+                      "label": "Meat",
                       "onTap": () {},
                     },
                     {
@@ -256,7 +255,7 @@ class Dashboard2View extends StatefulWidget {
                                   padding: const EdgeInsets.all(6.0),
                                   margin: const EdgeInsets.all(8.0),
                                   decoration: BoxDecoration(
-                                    color: Colors.green[800],
+                                    color: primaryColor.withOpacity(0.9),
                                     borderRadius: const BorderRadius.all(
                                       Radius.circular(
                                         12.0,
@@ -280,7 +279,7 @@ class Dashboard2View extends StatefulWidget {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 const Text(
-                                  "Roti bakar Cimanggis",
+                                  "Roti Bakar Pak Rudi",
                                   style: TextStyle(
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.bold,
@@ -324,7 +323,7 @@ class Dashboard2View extends StatefulWidget {
                                 ),
                                 const SizedBox(height: 6.0),
                                 const Text(
-                                  "€24",
+                                  "\$2",
                                   style: TextStyle(
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.bold,

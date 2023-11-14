@@ -1,6 +1,8 @@
 # flutter_lypsisbook
 
-A new Flutter project.
+## Previews
+
+<img src="previews/lybook-1.jpg" alt="alt text">
 
 ## Getting Started
 
