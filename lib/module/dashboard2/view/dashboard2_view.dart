@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
-import '../controller/dashboard_controller.dart';
+import '../controller/dashboard2_controller.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Dashboard2View extends StatefulWidget {

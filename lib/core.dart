@@ -7,8 +7,8 @@ export 'package:flutter_lypsisbook/module/change_password/controller/change_pass
 export 'package:flutter_lypsisbook/module/change_password/view/change_password_view.dart';
 export 'package:flutter_lypsisbook/module/dashboard/controller/dashboard_controller.dart';
 export 'package:flutter_lypsisbook/module/dashboard/view/dashboard_view.dart';
-export 'package:flutter_lypsisbook/module/dashboard2/controller/dashboard_controller.dart';
-export 'package:flutter_lypsisbook/module/dashboard2/view/dashboard_view.dart';
+export 'package:flutter_lypsisbook/module/dashboard2/controller/dashboard2_controller.dart';
+export 'package:flutter_lypsisbook/module/dashboard2/view/dashboard2_view.dart';
 export 'package:flutter_lypsisbook/module/edit_profile/controller/edit_profile_controller.dart';
 export 'package:flutter_lypsisbook/module/edit_profile/view/edit_profile_view.dart';
 export 'package:flutter_lypsisbook/module/forgot_password/controller/forgot_password_controller.dart';

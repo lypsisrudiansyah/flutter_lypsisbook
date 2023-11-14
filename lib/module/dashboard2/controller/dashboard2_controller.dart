@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
-import '../view/dashboard_view.dart';
+import '../view/dashboard2_view.dart';
 
 class Dashboard2Controller extends State<Dashboard2View> {
   static late Dashboard2Controller instance;
