@@ -105,7 +105,7 @@ class ProductListView extends StatefulWidget {
               GridView.builder(
                 padding: EdgeInsets.zero,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  childAspectRatio: 1.0 / 1.6,
+                  childAspectRatio: 1.0 / 1.5,
                   crossAxisCount: 2,
                   mainAxisSpacing: 8,
                   crossAxisSpacing: 8,
@@ -154,7 +154,7 @@ class ProductListView extends StatefulWidget {
                                     ),
                                   ),
                                 ),
-                                const Positioned(
+                                Positioned(
                                   right: 6.0,
                                   top: 8.0,
                                   child: CircleAvatar(
@@ -162,62 +162,34 @@ class ProductListView extends StatefulWidget {
                                     backgroundColor: Colors.white,
                                     child: Icon(
                                       Icons.favorite,
-                                      color: Colors.red,
+                                      color: item['is_favorite'] == true ? Colors.red : Colors.black87,
                                       size: 14.0,
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                Container(
                                   width: MediaQuery.of(context).size.width,
+                                  padding: const EdgeInsets.only(bottom: 8.0),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.end,
-                                    children: const [
+                                    children: [
                                       Text(
-                                        "text",
-                                        style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.white),
+                                        item["product_name"],
+                                        style: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.white),
                                       ),
                                       Text(
-                                        "text",
-                                        style: TextStyle(fontSize: 12.0, color: Colors.white),
+                                        item["category"],
+                                        style: const TextStyle(fontSize: 12.0, color: Colors.white),
                                       ),
                                       Text(
-                                        "text",
-                                        style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.white),
+                                        "\$${item["price"]}",
+                                        style: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.white),
                                       ),
                                     ],
                                   ),
                                 )
                               ],
                             ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 8.0,
-                        ),
-                        Text(
-                          item["product_name"],
-                          style: const TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 4.0,
-                        ),
-                        Text(
-                          item["category"],
-                          style: const TextStyle(
-                            fontSize: 12.0,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 4.0,
-                        ),
-                        Text(
-                          "${item["price"]}",
-                          style: const TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ],

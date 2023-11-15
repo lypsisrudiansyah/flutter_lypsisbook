@@ -44,7 +44,7 @@ class ProductListController extends State<ProductListView> {
       "id": 3,
       "photo":
           "https://images.unsplash.com/photo-1625869016774-3a92be2ae2cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-      "product_name": "Seperait",
+      "product_name": "Lemonade",
       "price": 33,
       "category": "Drink",
       "description":

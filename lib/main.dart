@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // home: const SplashView(),
       // home: const LoginView(),
-      // home: const MainNavigationView(),
-      home: const ProductListView(),
+      home: const MainNavigationView(),
+      // home: const ProductListView(),
     );
   }
 }
