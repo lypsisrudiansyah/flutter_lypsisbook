@@ -158,6 +158,7 @@ class DashboardView extends StatefulWidget {
               ),
               // * Text Flash Sale With See All Text
               ListTile(
+                onTap: () => Get.to(const ProductListView()),
                 title: const Text(
                   "Flash Sale",
                   style: TextStyle(
