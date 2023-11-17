@@ -3,7 +3,8 @@ import 'package:flutter_lypsisbook/core.dart';
 import '../controller/product_detail_controller.dart';
 
 class ProductDetailView extends StatefulWidget {
-  const ProductDetailView({Key? key}) : super(key: key);
+  final Map item;
+  const ProductDetailView({Key? key, required this.item}) : super(key: key);
 
   Widget build(context, ProductDetailController controller) {
     controller.view = this;
@@ -13,12 +14,24 @@ class ProductDetailView extends StatefulWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: CircleAvatar(
+            backgroundColor: Colors.black.withOpacity(.6),
+            child: const BackButton(
+              color: Colors.white,
+            ),
+          ),
+        ),
         actions: const [
-          CircleAvatar(
-            backgroundColor: Colors.white,
-            child: Icon(
-              Icons.favorite,
-              color: Colors.red,
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              backgroundColor: Colors.white,
+              child: Icon(
+                Icons.favorite,
+                color: Colors.red,
+              ),
             ),
           ),
         ],
@@ -27,14 +40,48 @@ class ProductDetailView extends StatefulWidget {
         child: Column(
           children: [
             Container(
-              height: 160.0,
-              decoration: const BoxDecoration(
+              height: 300.0,
+              decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(
-                    "https://images.unsplash.com/photo-1533050487297-09b450131914?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                    item['photo'],
                   ),
                   fit: BoxFit.cover,
                 ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          item['product_name'],
+                          style: const TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        "\$${item['price']}",
+                        style: const TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Text(
+                    item['category'],
+                    style: const TextStyle(
+                      fontSize: 13.0,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

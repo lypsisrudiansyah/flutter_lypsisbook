@@ -11,6 +11,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final ProductListController productListController = (ProductListController());
+    final Map itemProduct = productListController.products[0];
     return MaterialApp(
       title: 'Flutter Demo',
       navigatorKey: Get.navigatorKey,
@@ -23,7 +25,9 @@ class MyApp extends StatelessWidget {
       // home: const SplashView(),
       // home: const LoginView(),
       // home: const MainNavigationView(),
-      home: const ProductDetailView(),
+      home: ProductDetailView(
+        item: itemProduct,
+      ),
     );
   }
 }

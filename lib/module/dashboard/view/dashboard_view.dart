@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
-import '../controller/dashboard_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class DashboardView extends StatefulWidget {
@@ -202,7 +201,12 @@ class DashboardView extends StatefulWidget {
                 physics: const ScrollPhysics(),
                 itemBuilder: (BuildContext context, int index) {
                   var item = controller.products[index];
-                  return Container(
+                  return InkWell(
+                    onTap: () => Get.to(
+                      ProductDetailView(
+                        item: item,
+                      ),
+                    ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
