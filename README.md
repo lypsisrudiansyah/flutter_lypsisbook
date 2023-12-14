@@ -5,8 +5,23 @@
 <img src="previews/lybook-1.jpg" alt="alt text">
 
 ### Preview Videos
-[![Part 1](https://img.youtube.com/vi/FEyHPcDGbPk/0.jpg)](https://youtube.com/watch?v=FEyHPcDGbPk)
-
+<table border="0" width="100%">
+    <tr>
+        <td width="50%"><b style="font-size:30px">Part 1 ✅</b></td>
+        <td width="50%"><b style="font-size:30px">Part 2</b></td>
+    </tr>
+    <tr>
+        <td>
+            <a href="https://youtube.com/watch?v=FEyHPcDGbPk">
+                <img src="https://img.youtube.com/vi/FEyHPcDGbPk/0.jpg" width="100%">
+            </a>
+        </td>
+        <td>
+            ...
+        </td>
+    </tr>
+    <!-- ROW -->
+</table>
 
 
 ## Getting Started
