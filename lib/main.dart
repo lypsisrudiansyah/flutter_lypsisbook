@@ -19,15 +19,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         // This id.
-        primarySwatch: Colors.blue,
+        // primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      // home: const SplashView(),
+      home: const SplashView(),
       // home: const LoginView(),
-      // home: const MainNavigationView(),
-      home: ProductDetailView(
-        item: itemProduct,
-      ),
+      // home: const GoogleMapsExampleView(),
     );
   }
 }
