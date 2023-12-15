@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
-import '../controller/product_detail_controller.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class ProductDetailView extends StatefulWidget {
   final Map item;
@@ -81,8 +81,98 @@ class ProductDetailView extends StatefulWidget {
                       fontSize: 13.0,
                     ),
                   ),
+                  const SizedBox(
+                    height: 4.0,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    color: primaryColor.withOpacity(.05),
+                    child: Row(
+                      children: [
+                        RatingBar.builder(
+                          initialRating: 4.5,
+                          minRating: 1,
+                          direction: Axis.horizontal,
+                          allowHalfRating: true,
+                          itemCount: 5,
+                          itemBuilder: (context, _) => const Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                          ),
+                          itemSize: 24.0,
+                          onRatingUpdate: (rating) {
+                            print(rating);
+                          },
+                        ),
+                        const Spacer(),
+                        const Text(
+                          "200 Reviews",
+                          style: TextStyle(
+                            fontSize: 14.0,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 2.0,
+                        ),
+                        const Icon(
+                          Icons.chevron_right,
+                          size: 24.0,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  const ListTile(
+                    contentPadding: EdgeInsets.zero,
+                    title: Text("Description"),
+                  ),
+                  const SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    item['description'],
+                    style: const TextStyle(
+                      fontSize: 14.0,
+                    ),
+                  ),
+                  Text(
+                    item['description'],
+                    style: const TextStyle(
+                      fontSize: 14.0,
+                    ),
+                  ),
+                  Text(
+                    item['description'],
+                    style: const TextStyle(
+                      fontSize: 14.0,
+                    ),
+                  ),
+                  Text(
+                    item['description'],
+                    style: const TextStyle(
+                      fontSize: 14.0,
+                    ),
+                  ),
                 ],
               ),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+        child: Row(
+          children: [
+            Expanded(
+              child: LypsisButtonFW(text: "Wishlist", color: disabledColor, textColor: disabledTextColor, onPressed: () {}),
+            ),
+            const SizedBox(
+              width: 10.0,
+            ),
+            Expanded(
+              child: LypsisButtonFW(text: "Add to Cart", onPressed: () {}),
             ),
           ],
         ),
