@@ -17,7 +17,9 @@
             </a>
         </td>
         <td>
-            ...
+            <a href="https://youtube.com/watch?v=ZsZ5dkNEBJ0">
+                <img src="https://img.youtube.com/vi/ZsZ5dkNEBJ0/0.jpg" width="100%">
+            </a>
         </td>
     </tr>
     <!-- ROW -->
