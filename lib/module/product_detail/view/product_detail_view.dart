@@ -23,14 +23,14 @@ class ProductDetailView extends StatefulWidget {
             ),
           ),
         ),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: CircleAvatar(
               backgroundColor: Colors.white,
               child: Icon(
                 Icons.favorite,
-                color: Colors.red,
+                color: item['is_favorite'] == true ? Colors.red : Colors.black87,
               ),
             ),
           ),
@@ -162,7 +162,7 @@ class ProductDetailView extends StatefulWidget {
         ),
       ),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+        padding: const EdgeInsets.all(20),
         child: Row(
           children: [
             Expanded(

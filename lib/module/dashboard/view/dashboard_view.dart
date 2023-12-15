@@ -7,6 +7,8 @@ class DashboardView extends StatefulWidget {
 
   Widget build(context, DashboardController controller) {
     controller.view = this;
+    var mqH = MediaQuery.of(context).size.height;
+    var mqW = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: AppBar(
@@ -47,7 +49,7 @@ class DashboardView extends StatefulWidget {
 
                 return CarouselSlider(
                   options: CarouselOptions(
-                    height: 90.0,
+                    height: mqH * 0.125,
                     autoPlay: true,
                     enlargeCenterPage: true,
                   ),
@@ -55,7 +57,7 @@ class DashboardView extends StatefulWidget {
                     return Builder(
                       builder: (BuildContext context) {
                         return Container(
-                          width: MediaQuery.of(context).size.width,
+                          width: mqW,
                           margin: const EdgeInsets.symmetric(horizontal: 5.0),
                           decoration: BoxDecoration(
                             color: Colors.amber,
@@ -154,6 +156,9 @@ class DashboardView extends StatefulWidget {
                     ),
                   );
                 },
+              ),
+              const SizedBox(
+                height: 10.0,
               ),
               // * Text Flash Sale With See All Text
               ListTile(
@@ -257,7 +262,7 @@ class DashboardView extends StatefulWidget {
                           ),
                         ),
                         const SizedBox(
-                          height: 4.0,
+                          height: 2.0,
                         ),
                         Text(
                           item["category"],
@@ -269,11 +274,14 @@ class DashboardView extends StatefulWidget {
                           height: 4.0,
                         ),
                         Text(
-                          "${item["price"]}",
+                          "\$${item["price"]}",
                           style: const TextStyle(
                             fontSize: 16.0,
                             fontWeight: FontWeight.bold,
                           ),
+                        ),
+                        const SizedBox(
+                          height: 5.0,
                         ),
                       ],
                     ),
