@@ -22,9 +22,10 @@ class MyApp extends StatelessWidget {
         // primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const SplashView(),
+      // home: const SplashView(),
       // home: const LoginView(),
-      // home: const GoogleMapsExampleView(),
+      home: const MainNavigationView(),
+      // home: const RegisterView(),
     );
   }
 }

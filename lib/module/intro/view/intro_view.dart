@@ -1,14 +1,34 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
-import 'package:flutter_lypsisbook/shared/widget/lypsis_button_fw.dart';
-import '../controller/intro_controller.dart';
 
 class IntroView extends StatefulWidget {
   const IntroView({Key? key}) : super(key: key);
 
   Widget build(context, IntroController controller) {
     controller.view = this;
+
+    List<Map<String, dynamic>> carouselItems = [
+      {
+        "title": "Lypsisbook Demo 1",
+        "description":
+            "This innovative app seamlessly combines an extensive library of books, an intuitive dashboard for personalized reading insights",
+        "image": "https://img.freepik.com/free-vector/boy-student-sitting-stack-books-with-laptop-flat-icon-illustration_1284-64037.jpg",
+      },
+      {
+        "title": "Lypsisbook Demo 2",
+        "description":
+            "Dashboard revolutionizes your reading journey by offering a unique blend of books, a dynamic dashboard preview, and a comprehensive product list.",
+        "image": "https://img.freepik.com/free-vector/learning-concept-illustration_114360-6186.jpg",
+      },
+      {
+        "title": "Lypsisbook Demo 3",
+        "description":
+            "Immerse yourself in a vast collection of books, get a sneak peek through our interactive dashboard preview, and explore handpicked reading accessories in our product list.",
+        "image": "https://img.freepik.com/free-vector/students-watching-webinar-computer-studying-online_74855-15522.jpg",
+      },
+      // Add more objects as needed
+    ];
 
     return Scaffold(
       body: SafeArea(
@@ -25,28 +45,6 @@ class IntroView extends StatefulWidget {
                     // "https://img.freepik.com/free-vector/focused-tiny-people-reading-books_74855-5836.jpg",
                     // "https://img.freepik.com/free-vector/students-watching-webinar-computer-studying-online_74855-15522.jpg"
                   ]; */
-                  List<Map<String, dynamic>> carouselItems = [
-                    {
-                      "title": "Title 1",
-                      "description":
-                          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et",
-                      "image":
-                          "https://img.freepik.com/free-vector/boy-student-sitting-stack-books-with-laptop-flat-icon-illustration_1284-64037.jpg",
-                    },
-                    {
-                      "title": "Title 2",
-                      "description":
-                          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,",
-                      "image": "https://img.freepik.com/free-vector/learning-concept-illustration_114360-6186.jpg",
-                    },
-                    {
-                      "title": "Title 3",
-                      "description":
-                          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa",
-                      "image": "https://img.freepik.com/free-vector/students-watching-webinar-computer-studying-online_74855-15522.jpg",
-                    },
-                    // Add more objects as needed
-                  ];
 
                   return SizedBox(
                     // color: Colors.red,
@@ -132,7 +130,20 @@ class IntroView extends StatefulWidget {
                 SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                 LypsisButtonFW(
                   text: "Next",
-                  onPressed: () {},
+                  // controller.carouselController
+                  onPressed: () {
+                    var theCurrent = controller.currentIndex;
+                    print("the current : $theCurrent");
+                    if (controller.currentIndex < (carouselItems.length - 1)) {
+                      controller.setState(() {
+                        theCurrent++;
+                        controller.carouselController.jumpToPage(theCurrent);
+                      });
+                      // controller.carouselController.jumpToPage(theCurrent++);
+                    } else {
+                      Get.to(const LoginView());
+                    }
+                  },
                 ),
               ],
             ),

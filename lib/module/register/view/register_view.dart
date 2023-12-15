@@ -1,10 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
-import 'package:flutter_lypsisbook/shared/theme_config.dart';
-import 'package:flutter_lypsisbook/shared/widget/lypsis_button_fw.dart';
-import 'package:flutter_lypsisbook/shared/widget/r_text_field.dart';
-import 'package:flutter_lypsisbook/state_util.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({Key? key}) : super(key: key);
@@ -28,7 +24,7 @@ class RegisterView extends StatefulWidget {
             children: [
               Image.asset(
                 'assets/images/lypsisbook-480.png',
-                width: mqW * 0.16,
+                width: mqW * 0.20,
               ),
               const SizedBox(height: 20.0),
               RTextField(
@@ -41,9 +37,12 @@ class RegisterView extends StatefulWidget {
                 onChanged: (value) {},
               ),
               const SizedBox(height: 20.0),
-              RTextField(
-                hintText: "Password",
+              RPasswordField(
+                hintText: 'Password',
+                hintColor: secondaryColor,
                 onChanged: (value) {},
+                showPasswordToggle: true,
+                onTogglePasswordVisibility: (value) => print('show password: $value'),
               ),
               const SizedBox(height: 20.0),
               LypsisButtonFW(text: "Create an Account", onPressed: () {}),

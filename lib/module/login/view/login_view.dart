@@ -70,7 +70,7 @@ class LoginView extends StatefulWidget {
                         hintText: 'Password',
                         hintColor: secondaryColor,
                         onChanged: (value) {},
-                        showPasswordToggle: true,
+                        showPasswordToggle: false,
                         onTogglePasswordVisibility: (value) => print('show password: $value'),
                       ),
                       SizedBox(height: mqH * 0.03),
