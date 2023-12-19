@@ -17,8 +17,6 @@ export 'package:flutter_lypsisbook/module/edit_profile/controller/edit_profile_c
 export 'package:flutter_lypsisbook/module/edit_profile/view/edit_profile_view.dart';
 export 'package:flutter_lypsisbook/module/forgot_password/controller/forgot_password_controller.dart';
 export 'package:flutter_lypsisbook/module/forgot_password/view/forgot_password_view.dart';
-export 'package:flutter_lypsisbook/module/google_maps_example/controller/google_maps_example_controller.dart';
-export 'package:flutter_lypsisbook/module/google_maps_example/view/google_maps_example_view.dart';
 export 'package:flutter_lypsisbook/module/intro/controller/intro_controller.dart';
 export 'package:flutter_lypsisbook/module/intro/view/intro_view.dart';
 export 'package:flutter_lypsisbook/module/login/controller/login_controller.dart';

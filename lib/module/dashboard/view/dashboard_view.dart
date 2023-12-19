@@ -30,7 +30,26 @@ class DashboardView extends StatefulWidget {
             ),
           ],
         ),
-        actions: const [],
+        actions: [
+          InkWell(
+            onTap: () => Get.to(const CartView()),
+            child: const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Badge(
+                label: Text(
+                  "4",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                child: Icon(
+                  Icons.shopping_cart,
+                  size: 24.0,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Container(
