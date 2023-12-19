@@ -11,7 +11,6 @@ class ChangePasswordView extends StatefulWidget {
       appBar: AppBar(
         title: const Text("ChangePassword"),
         actions: const [],
-        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Container(

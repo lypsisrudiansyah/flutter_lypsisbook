@@ -9,7 +9,6 @@ class CartView extends StatefulWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Cart"),
-        centerTitle: true,
         actions: const [],
       ),
       body: SingleChildScrollView(

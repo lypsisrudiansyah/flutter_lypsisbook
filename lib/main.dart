@@ -16,18 +16,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       navigatorKey: Get.navigatorKey,
-      theme: ThemeData(
-        useMaterial3: true,
-        // This id.
-        // primarySwatch: Colors.blue,
-      ),
+      theme: MainTheme.getTheme(),
       debugShowCheckedModeBanner: false,
       // home: const SplashView(),
       // home: const LoginView(),
-      // home: const MainNavigationView(),
+      home: const MainNavigationView(),
       // home: ProductDetailView(item: itemProduct),
       // home: const RegisterView(),
-      home: const CartView(),
+      // home: const CartView(),
     );
   }
 }
