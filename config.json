@@ -6,7 +6,8 @@
         "product_list",
         "product_detail",
         "edit_profile",
-        "google_maps_example"
+        "cart",
+        "checkout"
     ],
     "module_directory_name": "module",
     "experimental_mode": false,
