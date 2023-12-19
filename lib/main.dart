@@ -24,10 +24,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // home: const SplashView(),
       // home: const LoginView(),
-      home: const MainNavigationView(),
+      // home: const MainNavigationView(),
       // home: ProductDetailView(item: itemProduct),
       // home: const RegisterView(),
-      // home: const EditProfileView(),
+      home: const CartView(),
     );
   }
 }

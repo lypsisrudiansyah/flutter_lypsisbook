@@ -13,7 +13,6 @@ class RegisterView extends StatefulWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Register"),
-        centerTitle: true,
         actions: const [],
       ),
       body: SingleChildScrollView(

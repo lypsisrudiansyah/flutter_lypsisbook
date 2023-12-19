@@ -27,7 +27,6 @@ class ProductListView extends StatefulWidget {
             ),
           ],
         ),
-        centerTitle: true,
         actions: const [],
       ),
       body: SingleChildScrollView(

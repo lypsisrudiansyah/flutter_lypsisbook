@@ -13,7 +13,6 @@ class ProfileView extends StatefulWidget {
       appBar: AppBar(
         title: const Text("Profile"),
         actions: const [],
-        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Container(

@@ -145,7 +145,8 @@ class DashboardView extends StatefulWidget {
                   var itemCategory = controller.categories[index];
                   return Container(
                     decoration: const BoxDecoration(
-                      color: Colors.black87,
+                      // color: Colors.black87,
+                      color: primaryDarkerColor,
                       borderRadius: BorderRadius.all(
                         Radius.circular(8.0),
                       ),
