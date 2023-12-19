@@ -42,13 +42,7 @@ class ProductListView extends StatefulWidget {
                       child: SizedBox(
                         height: 42,
                         child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.black,
-                            foregroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                          ),
+                          style: ElevatedButton.styleFrom(),
                           onPressed: () {},
                           child: Row(
                             children: const [
@@ -74,12 +68,6 @@ class ProductListView extends StatefulWidget {
                       child: SizedBox(
                         height: 42,
                         child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.black,
-                              foregroundColor: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                              )),
                           onPressed: () {},
                           child: Row(
                             children: const [

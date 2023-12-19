@@ -14,6 +14,15 @@ class MainTheme {
       appBarTheme: const AppBarTheme(
         centerTitle: true,
       ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: primaryDarkerColor,
+          foregroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+        ),
+      ),
     );
   }
 }
