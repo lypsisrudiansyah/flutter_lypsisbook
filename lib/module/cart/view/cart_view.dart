@@ -36,6 +36,12 @@ class CartView extends StatefulWidget {
                       color: Colors.grey[300]!,
                     ),
                   ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                    borderSide: const BorderSide(
+                      color: primaryColor, // Customize the color for the focused border
+                    ),
+                  ),
                   prefixIcon: Icon(
                     Icons.search,
                     color: Colors.blueGrey[900],
@@ -98,24 +104,64 @@ class CartView extends StatefulWidget {
               ],
             ),
             const SizedBox(height: 12.0),
-            // & Notes : When Using SingleChildScrollView we need to set the ListView when its a child of it, set the shrinkWrap:true,
-            // & but if you wanna scrolled just on list data, the top position widget is not scrolled, you can remove the SingleChildScrollView, then using Expanded->ListView->shrinkWrap:false
+            // & Notes : When Using SingleChildScrollView we need to set the ListView when its a child of it, set the shrinkWrap:true, the result whole widget inside SingleChildScrollView will be scrollable
+            // & but if you wanna scrolled just on list data, the top position widget is not scrolled(outside the ListView), you can remove the SingleChildScrollView, then using Expanded->ListView->shrinkWrap:false
             Expanded(
               child: ListView.builder(
-                itemCount: 30,
+                itemCount: controller.products.length,
                 physics: const ScrollPhysics(),
                 itemBuilder: (BuildContext context, int index) {
-                  return Card(
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundColor: Colors.grey[200],
-                        backgroundImage: const NetworkImage(
-                          "https://i.ibb.co/QrTHd59/woman.jpg",
+                  Map theItem = controller.products[index];
+                  return Row(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 12.0),
+                        height: 96.0,
+                        width: 96.0,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: NetworkImage(
+                              theItem['photo'] ??
+                                  'https://png.pngtree.com/png-vector/20190820/ourmid/pngtree-no-image-vector-illustration-isolated-png-image_1694547.jpg',
+                            ),
+                            fit: BoxFit.cover,
+                          ),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(
+                              8.0,
+                            ),
+                          ),
                         ),
                       ),
-                      title: const Text("Jessica Doe"),
-                      subtitle: const Text("Programmer"),
-                    ),
+                      const SizedBox(width: 10.0),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              theItem['product_name'],
+                              style: const TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const Text(
+                              "text",
+                              style: TextStyle(
+                                fontSize: 12.0,
+                              ),
+                            ),
+                            const Text(
+                              "text",
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
                   );
                 },
               ),
