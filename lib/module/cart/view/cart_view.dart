@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class CartView extends StatefulWidget {
   const CartView({Key? key}) : super(key: key);
@@ -113,6 +114,7 @@ class CartView extends StatefulWidget {
                 itemBuilder: (BuildContext context, int index) {
                   Map theItem = controller.products[index];
                   return Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         margin: const EdgeInsets.only(bottom: 12.0),
@@ -139,28 +141,59 @@ class CartView extends StatefulWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              theItem['product_name'],
+                              theItem['product_name'] ?? '-',
                               style: const TextStyle(
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            const Text(
-                              "text",
-                              style: TextStyle(
+                            Text(
+                              theItem['category'] ?? '-',
+                              style: const TextStyle(
                                 fontSize: 12.0,
                               ),
                             ),
-                            const Text(
-                              "text",
-                              style: TextStyle(
+                            Text(
+                              "\$${theItem['price']}" ?? '-',
+                              style: const TextStyle(
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                           ],
                         ),
-                      )
+                      ),
+                      Container(
+                        height: 100,
+                        width: 100,
+                        decoration: const BoxDecoration(
+                          color: Colors.blue,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Icon(
+                              MdiIcons.plusBox,
+                              size: 32.0,
+                            ),
+                            const SizedBox(
+                              width: 25,
+                              child: Text(
+                                "100",
+                                style: TextStyle(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Icon(
+                              MdiIcons.minusBox,
+                              size: 32.0,
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   );
                 },
