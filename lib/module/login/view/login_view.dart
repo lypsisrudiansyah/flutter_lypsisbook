@@ -74,7 +74,11 @@ class LoginView extends StatefulWidget {
                         onTogglePasswordVisibility: (value) => print('show password: $value'),
                       ),
                       SizedBox(height: mqH * 0.03),
-                      LypsisButtonFW(text: "Login", onPressed: () => Get.offAll(const MainNavigationView())),
+                      LypsisButtonFW(
+                        text: "Login",
+                        onPressed: () => Get.offAll(const MainNavigationView()),
+                        key: const Key('button-login'),
+                      ),
                       SizedBox(height: mqH * 0.03),
                       InkWell(
                         onTap: () => Get.to(const ForgotPasswordView()),

@@ -16,7 +16,10 @@
         "titleBar.activeBackground": "#c12fff",
         "titleBar.activeForeground": "#e7e7e7",
         "titleBar.inactiveBackground": "#c12fff99",
-        "titleBar.inactiveForeground": "#e7e7e799"
+        "titleBar.inactiveForeground": "#e7e7e799",
+        "editorGroup.border": "#d062ff",
+        "statusBar.debuggingBackground": "#6dff2f",
+        "statusBar.debuggingForeground": "#15202b"
     },
     "peacock.color": "#C12FFF",
     "editor.formatOnSave": true,
