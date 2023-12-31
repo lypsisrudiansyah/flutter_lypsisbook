@@ -202,7 +202,14 @@ class CartView extends StatefulWidget {
           ],
         ),
       ),
-      bottomNavigationBar: Padding(
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          border: Border(
+            top: BorderSide(
+              color: Colors.grey[300]!,
+            ),
+          ),
+        ),
         padding: const EdgeInsets.all(20.0),
         child: Wrap(
           children: [
@@ -214,34 +221,38 @@ class CartView extends StatefulWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(
-                        "Item Count : 10",
+                        "Items",
                         style: TextStyle(
                           fontSize: 14.0,
                         ),
                       ),
                       Text(
-                        "Shipping : Free",
+                        "4",
                         style: TextStyle(
-                          fontSize: 14.0,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
                   ),
                   // space this betw
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: const [
                       Text(
-                        "text",
+                        "Total",
                         style: TextStyle(
                           fontSize: 14.0,
                         ),
                       ),
                       Text(
-                        "text",
+                        "\$344.01",
                         style: TextStyle(
-                          fontSize: 14.0,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
