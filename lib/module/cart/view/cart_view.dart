@@ -118,8 +118,8 @@ class CartView extends StatefulWidget {
                     children: [
                       Container(
                         margin: const EdgeInsets.only(bottom: 12.0),
-                        height: 96.0,
-                        width: 96.0,
+                        height: 76.0,
+                        width: 76.0,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: NetworkImage(
@@ -167,8 +167,8 @@ class CartView extends StatefulWidget {
                         height: 100,
                         width: 100,
                         decoration: const BoxDecoration(
-                          color: Colors.blue,
-                        ),
+                            // color: Colors.blue,
+                            ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -199,6 +199,57 @@ class CartView extends StatefulWidget {
                 },
               ),
             ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Wrap(
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    children: const [
+                      Text(
+                        "Item Count : 10",
+                        style: TextStyle(
+                          fontSize: 14.0,
+                        ),
+                      ),
+                      Text(
+                        "Shipping : Free",
+                        style: TextStyle(
+                          fontSize: 14.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                  // space this betw
+                  Column(
+                    children: const [
+                      Text(
+                        "text",
+                        style: TextStyle(
+                          fontSize: 14.0,
+                        ),
+                      ),
+                      Text(
+                        "text",
+                        style: TextStyle(
+                          fontSize: 14.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            LypsisButtonFW(text: "Checkout", onPressed: () {}),
           ],
         ),
       ),
