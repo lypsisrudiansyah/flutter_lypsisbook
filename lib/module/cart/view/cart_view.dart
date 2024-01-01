@@ -218,44 +218,48 @@ class CartView extends StatefulWidget {
                 color: Colors.blue,
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        "Items",
-                        style: TextStyle(
-                          fontSize: 14.0,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "Items",
+                          style: TextStyle(
+                            fontSize: 14.0,
+                          ),
                         ),
-                      ),
-                      Text(
-                        "4",
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
+                        Text(
+                          "4",
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   // space this betw
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: const [
-                      Text(
-                        "Total",
-                        style: TextStyle(
-                          fontSize: 14.0,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: const [
+                        Text(
+                          "Total",
+                          style: TextStyle(
+                            fontSize: 14.0,
+                          ),
                         ),
-                      ),
-                      Text(
-                        "\$344.01",
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
+                        Text(
+                          "\$344.01",
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ],
               ),
