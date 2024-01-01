@@ -163,33 +163,39 @@ class CartView extends StatefulWidget {
                           ],
                         ),
                       ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        decoration: const BoxDecoration(
-                            // color: Colors.blue,
-                            ),
+                      SizedBox(
+                        height: 80,
+                        width: 120,
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
+                          // mainAxisAlignment: MainAxisAlignment.end,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Icon(
-                              MdiIcons.plusBox,
-                              size: 32.0,
+                            IconButton(
+                              onPressed: () => controller.increaseQty(theItem),
+                              padding: EdgeInsets.zero,
+                              icon: Icon(
+                                MdiIcons.plusBox,
+                                size: 32.0,
+                              ),
                             ),
-                            const SizedBox(
+                            SizedBox(
                               width: 25,
                               child: Text(
-                                "100",
-                                style: TextStyle(
+                                "${theItem["qty"]}",
+                                style: const TextStyle(
                                   fontSize: 14.0,
                                   fontWeight: FontWeight.bold,
                                 ),
+                                textAlign: TextAlign.center,
                               ),
                             ),
-                            Icon(
-                              MdiIcons.minusBox,
-                              size: 32.0,
+                            IconButton(
+                              onPressed: () => controller.decreaseQty(theItem),
+                              padding: EdgeInsets.zero,
+                              icon: Icon(
+                                MdiIcons.minusBox,
+                                size: 32.0,
+                              ),
                             ),
                           ],
                         ),
@@ -214,9 +220,7 @@ class CartView extends StatefulWidget {
         child: Wrap(
           children: [
             Container(
-              decoration: const BoxDecoration(
-                color: Colors.blue,
-              ),
+              // decoration: const BoxDecoration(),
               child: Row(
                 // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -252,7 +256,7 @@ class CartView extends StatefulWidget {
                           ),
                         ),
                         Text(
-                          "\$344.01",
+                          "\$ 344.01",
                           style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
@@ -263,6 +267,9 @@ class CartView extends StatefulWidget {
                   ),
                 ],
               ),
+            ),
+            Container(
+              height: 12.0,
             ),
             LypsisButtonFW(text: "Checkout", onPressed: () {}),
           ],
