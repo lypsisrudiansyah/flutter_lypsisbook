@@ -163,7 +163,43 @@ class CartView extends StatefulWidget {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      // * Quantity Feature #1 : Using Wrap, doesnt need to set the width, but tricky for children widget like text(with widget center) qty we need to set the width and height
+                      Wrap(
+                        children: [
+                          IconButton(
+                            onPressed: () => controller.increaseQty(theItem),
+                            padding: EdgeInsets.zero,
+                            icon: Icon(
+                              MdiIcons.plusBox,
+                              size: 32.0,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 40,
+                            width: 25,
+                            child: Center(
+                              child: Text(
+                                "${theItem["qty"]}",
+                                style: const TextStyle(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () => controller.decreaseQty(theItem),
+                            padding: EdgeInsets.zero,
+                            icon: Icon(
+                              MdiIcons.minusBox,
+                              size: 32.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                      // * Quantity Feature #2 : Using ROW but need to set the width
+                      /* SizedBox(
                         height: 80,
                         width: 120,
                         child: Row(
@@ -199,7 +235,7 @@ class CartView extends StatefulWidget {
                             ),
                           ],
                         ),
-                      ),
+                      ), */
                     ],
                   );
                 },
@@ -248,16 +284,16 @@ class CartView extends StatefulWidget {
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: const [
-                        Text(
+                      children: [
+                        const Text(
                           "Total",
                           style: TextStyle(
                             fontSize: 14.0,
                           ),
                         ),
                         Text(
-                          "\$ 344.01",
-                          style: TextStyle(
+                          "\$${controller.total}",
+                          style: const TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
                           ),

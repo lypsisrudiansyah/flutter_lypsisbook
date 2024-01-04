@@ -68,4 +68,12 @@ class CartController extends State<CartView> {
     item["qty"]--;
     setState(() {});
   }
+
+  double get total {
+    double total = 0;
+    for (var item in products) {
+      total += item["price"] * item["qty"];
+    }
+    return total;
+  }
 }
