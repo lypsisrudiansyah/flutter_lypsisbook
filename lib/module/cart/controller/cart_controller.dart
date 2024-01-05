@@ -97,7 +97,7 @@ class CartController extends State<CartView> {
     return total;
   }
 
-  bool itemsCartGridMode = false;
+  bool itemsCartGridMode = true;
   void toggleGridMode() {
     itemsCartGridMode = !itemsCartGridMode;
     setState(() {});
