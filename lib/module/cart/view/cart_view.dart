@@ -65,7 +65,7 @@ class CartView extends StatefulWidget {
                       child: Row(
                         children: const [
                           Expanded(
-                            child: Text("Filter 1"),
+                            child: Text("Sort By"),
                           ),
                           Icon(
                             Icons.tune,
@@ -91,7 +91,7 @@ class CartView extends StatefulWidget {
                       child: Row(
                         children: const [
                           Expanded(
-                            child: Text("Filter 1"),
+                            child: Text("Filter"),
                           ),
                           Icon(
                             Icons.tune,
@@ -102,109 +102,78 @@ class CartView extends StatefulWidget {
                     ),
                   ),
                 ),
+                const SizedBox(width: 6.0),
+                IconButton(
+                  onPressed: () => controller.toggleGridMode(),
+                  icon: Icon(
+                    controller.itemsCartGridMode == true ? Icons.grid_on_outlined : Icons.list,
+                    size: 24.0,
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 12.0),
             // & Notes : When Using SingleChildScrollView we need to set the ListView when its a child of it, set the shrinkWrap:true, the result whole widget inside SingleChildScrollView will be scrollable
             // & but if you wanna scrolled just on list data, the top position widget is not scrolled(outside the ListView), you can remove the SingleChildScrollView, then using Expanded->ListView->shrinkWrap:false
-            Expanded(
-              child: ListView.builder(
-                itemCount: controller.products.length,
-                physics: const ScrollPhysics(),
-                itemBuilder: (BuildContext context, int index) {
-                  Map theItem = controller.products[index];
-                  return Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 12.0),
-                        height: 76.0,
-                        width: 76.0,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: NetworkImage(
-                              theItem['photo'] ??
-                                  'https://png.pngtree.com/png-vector/20190820/ourmid/pngtree-no-image-vector-illustration-isolated-png-image_1694547.jpg',
+            if (controller.itemsCartGridMode == false)
+              Expanded(
+                child: ListView.builder(
+                  itemCount: controller.products.length,
+                  physics: const ScrollPhysics(),
+                  itemBuilder: (BuildContext context, int index) {
+                    Map theItem = controller.products[index];
+                    return Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(bottom: 12.0),
+                          height: 76.0,
+                          width: 76.0,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: NetworkImage(
+                                theItem['photo'] ??
+                                    'https://png.pngtree.com/png-vector/20190820/ourmid/pngtree-no-image-vector-illustration-isolated-png-image_1694547.jpg',
+                              ),
+                              fit: BoxFit.cover,
                             ),
-                            fit: BoxFit.cover,
-                          ),
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(
-                              8.0,
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(
+                                8.0,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      const SizedBox(width: 10.0),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              theItem['product_name'] ?? '-',
-                              style: const TextStyle(
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              theItem['category'] ?? '-',
-                              style: const TextStyle(
-                                fontSize: 12.0,
-                              ),
-                            ),
-                            Text(
-                              "\$${theItem['price']}" ?? '-',
-                              style: const TextStyle(
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      // * Quantity Feature #1 : Using Wrap, doesnt need to set the width, but tricky for children widget like text(with widget center) qty we need to set the width and height
-                      Wrap(
-                        children: [
-                          IconButton(
-                            onPressed: () => controller.increaseQty(theItem),
-                            padding: EdgeInsets.zero,
-                            icon: Icon(
-                              MdiIcons.plusBox,
-                              size: 32.0,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 40,
-                            width: 25,
-                            child: Center(
-                              child: Text(
-                                "${theItem["qty"]}",
+                        const SizedBox(width: 10.0),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                theItem['product_name'] ?? '-',
                                 style: const TextStyle(
-                                  fontSize: 14.0,
+                                  fontSize: 16.0,
                                   fontWeight: FontWeight.bold,
                                 ),
-                                textAlign: TextAlign.center,
                               ),
-                            ),
+                              Text(
+                                theItem['category'] ?? '-',
+                                style: const TextStyle(
+                                  fontSize: 12.0,
+                                ),
+                              ),
+                              Text(
+                                "\$${theItem['price']}",
+                                style: const TextStyle(
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
                           ),
-                          IconButton(
-                            onPressed: () => controller.decreaseQty(theItem),
-                            padding: EdgeInsets.zero,
-                            icon: Icon(
-                              MdiIcons.minusBox,
-                              size: 32.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                      // * Quantity Feature #2 : Using ROW but need to set the width
-                      /* SizedBox(
-                        height: 80,
-                        width: 120,
-                        child: Row(
-                          // mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.center,
+                        ),
+                        // * Quantity Feature #1 : Using Wrap, doesnt need to set the width, but tricky for children widget like text(with widget center) qty we need to set the width and height
+                        Wrap(
                           children: [
                             IconButton(
                               onPressed: () => controller.increaseQty(theItem),
@@ -215,14 +184,17 @@ class CartView extends StatefulWidget {
                               ),
                             ),
                             SizedBox(
+                              height: 40,
                               width: 25,
-                              child: Text(
-                                "${theItem["qty"]}",
-                                style: const TextStyle(
-                                  fontSize: 14.0,
-                                  fontWeight: FontWeight.bold,
+                              child: Center(
+                                child: Text(
+                                  "${theItem["qty"]}",
+                                  style: const TextStyle(
+                                    fontSize: 14.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  textAlign: TextAlign.center,
                                 ),
-                                textAlign: TextAlign.center,
                               ),
                             ),
                             IconButton(
@@ -235,12 +207,71 @@ class CartView extends StatefulWidget {
                             ),
                           ],
                         ),
-                      ), */
-                    ],
+                        // * Quantity Feature #2 : Using ROW but need to set the width
+                        /* SizedBox(
+                          height: 80,
+                          width: 120,
+                          child: Row(
+                            // mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              IconButton(
+                                onPressed: () => controller.increaseQty(theItem),
+                                padding: EdgeInsets.zero,
+                                icon: Icon(
+                                  MdiIcons.plusBox,
+                                  size: 32.0,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 25,
+                                child: Text(
+                                  "${theItem["qty"]}",
+                                  style: const TextStyle(
+                                    fontSize: 14.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: () => controller.decreaseQty(theItem),
+                                padding: EdgeInsets.zero,
+                                icon: Icon(
+                                  MdiIcons.minusBox,
+                                  size: 32.0,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ), */
+                      ],
+                    );
+                  },
+                ),
+              ),
+
+            if (controller.itemsCartGridMode == true)
+              GridView.builder(
+                padding: EdgeInsets.zero,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  childAspectRatio: 1.0,
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 6,
+                  crossAxisSpacing: 6,
+                ),
+                itemCount: controller.products.length,
+                shrinkWrap: true,
+                physics: const ScrollPhysics(),
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    color: Colors.purple,
+                    child: Column(
+                      children: const [],
+                    ),
                   );
                 },
               ),
-            ),
           ],
         ),
       ),

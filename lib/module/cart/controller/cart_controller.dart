@@ -36,7 +36,7 @@ class CartController extends State<CartView> {
       "photo": "https://i.ibb.co/mHtmhmP/photo-1521305916504-4a1121188589-crop-entropy-cs-tinysrgb-fit-max-fm-jpg-ixid-Mnwy-ODA4-ODh8-MHwxf-H.jpg",
       "product_name": "Beef Burger",
       "price": 22,
-      "qty": 22,
+      "qty": 3,
       "category": "Food",
       "description":
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -95,5 +95,11 @@ class CartController extends State<CartView> {
       total += item["qty"];
     }
     return total;
+  }
+
+  bool itemsCartGridMode = false;
+  void toggleGridMode() {
+    itemsCartGridMode = !itemsCartGridMode;
+    setState(() {});
   }
 }
