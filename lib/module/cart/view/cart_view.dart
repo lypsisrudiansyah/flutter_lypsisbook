@@ -260,19 +260,41 @@ class CartView extends StatefulWidget {
               child: Row(
                 // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
+                  SizedBox(
+                    width: 50,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
+                      children: [
+                        const Text(
                           "Items",
                           style: TextStyle(
                             fontSize: 14.0,
                           ),
                         ),
                         Text(
-                          "4",
+                          "${controller.products.length}",
+                          style: const TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 70,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Total(Qty)",
                           style: TextStyle(
+                            fontSize: 14.0,
+                          ),
+                        ),
+                        Text(
+                          "${controller.totalQty}",
+                          style: const TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
                           ),

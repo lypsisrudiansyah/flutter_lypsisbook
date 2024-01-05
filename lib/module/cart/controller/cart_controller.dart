@@ -56,6 +56,18 @@ class CartController extends State<CartView> {
       "discount_price": 28,
       "is_favorite": false,
     },
+    {
+      "id": 4,
+      "photo": "https://i.ibb.co/mHCx9Nj/photo-1517487881594-2787fef5ebf7-crop-entropy-cs-tinysrgb-fit-max-fm-jpg-ixid-Mnwy-ODA4-ODh8-MHwxf-H.jpg",
+      "product_name": "Terrano Milk",
+      "price": 32,
+      "qty": 1,
+      "category": "Drink",
+      "description":
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "discount_price": 28,
+      "is_favorite": true,
+    },
   ];
 
   void increaseQty(Map item) {
@@ -73,6 +85,14 @@ class CartController extends State<CartView> {
     double total = 0;
     for (var item in products) {
       total += item["price"] * item["qty"];
+    }
+    return total;
+  }
+
+  double get totalQty {
+    double total = 0;
+    for (var item in products) {
+      total += item["qty"];
     }
     return total;
   }
