@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
-import 'package:flutter_lypsisbook/module/cart/widget/cart_product_grid_view.dart';
-import 'package:flutter_lypsisbook/module/cart/widget/cart_product_list_view.dart';
+import 'package:flutter_lypsisbook/module/cart/widget/cart_product_grid_view_item.dart';
+import 'package:flutter_lypsisbook/module/cart/widget/cart_product_list_view_item.dart';
 
 class CartView extends StatefulWidget {
   const CartView({Key? key}) : super(key: key);
@@ -116,9 +116,37 @@ class CartView extends StatefulWidget {
             const SizedBox(height: 12.0),
             // & Notes : When Using SingleChildScrollView we need to set the ListView when its a child of it, set the shrinkWrap:true, the result whole widget inside SingleChildScrollView will be scrollable
             // & but if you wanna scrolled just on list data, the top position widget is not scrolled(outside the ListView), you can remove the SingleChildScrollView, then using Expanded->ListView->shrinkWrap:false
-            if (controller.itemsCartGridMode == false) const CartProductListView(),
+            if (controller.itemsCartGridMode == false)
+              Expanded(
+                child: ListView.builder(
+                  itemCount: controller.products.length,
+                  physics: const ScrollPhysics(),
+                  itemBuilder: (BuildContext context, int index) {
+                    final Map<String, dynamic> theItem = controller.products[index];
+                    return CartProductListViewItem(theItem: theItem);
+                  },
+                ),
+              ),
 
-            if (controller.itemsCartGridMode == true) const CartProductGridView()
+            if (controller.itemsCartGridMode == true)
+              Expanded(
+                child: GridView.builder(
+                  padding: EdgeInsets.zero,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    childAspectRatio: 1.0 / 1.3,
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 6,
+                    crossAxisSpacing: 6,
+                  ),
+                  itemCount: controller.products.length,
+                  shrinkWrap: true,
+                  physics: const ScrollPhysics(),
+                  itemBuilder: (BuildContext context, int index) {
+                    Map<String, dynamic> theItem = controller.products[index];
+                    return CartProductGridViewItem(theItem: theItem);
+                  },
+                ),
+              ),
           ],
         ),
       ),
