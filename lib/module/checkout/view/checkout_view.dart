@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
 
+import '../widget/checkout_option.dart';
+
 class CheckoutView extends StatefulWidget {
   const CheckoutView({Key? key}) : super(key: key);
 
@@ -31,7 +33,7 @@ class CheckoutView extends StatefulWidget {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: 3,
+                itemCount: cartController.products.length,
                 physics: const ScrollPhysics(),
                 itemBuilder: (BuildContext context, int index) {
                   var item = cartController.products[index];
@@ -53,7 +55,21 @@ class CheckoutView extends StatefulWidget {
                   );
                 },
               ),
-            )
+            ),
+            const CheckoutOption(
+              title: "Shipping Address",
+              subtitle1: "Adi Sucipto Street, Sungai Raya",
+              subtitle2: "Kubu Raya, Indonesia",
+            ),
+            const CheckoutOption(
+              title: "Shipping Method",
+              subtitle1: "Akoa Exxpress, 1 weeks for \$1.5",
+            ),
+            const CheckoutOption(
+              title: "Promo Code",
+              subtitle1: "no promo applied",
+            ),
+            const Spacer()
           ],
         ),
       ),
