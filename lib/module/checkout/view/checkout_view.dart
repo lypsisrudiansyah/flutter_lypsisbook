@@ -21,7 +21,13 @@ class CheckoutView extends StatefulWidget {
           children: [
             const ListTile(
               contentPadding: EdgeInsets.zero,
-              title: Text("Cart Items"),
+              title: Text(
+                "Cart Items",
+                style: TextStyle(
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
             Expanded(
               child: ListView.builder(
@@ -31,11 +37,17 @@ class CheckoutView extends StatefulWidget {
                   var item = cartController.products[index];
                   double total = item["price"] * item["qty"];
                   return ListTile(
+                    contentPadding: EdgeInsets.zero,
                     leading: CircleAvatar(
                       backgroundColor: Colors.grey[200],
                       backgroundImage: NetworkImage(item['photo']),
                     ),
-                    title: Text(item["product_name"]),
+                    title: Text(
+                      item["product_name"],
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     subtitle: Text("QTY : ${item['qty']}  Price: \$${item['price']}"),
                     trailing: Text("\$$total"),
                   );
