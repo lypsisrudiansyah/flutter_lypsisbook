@@ -235,7 +235,7 @@ class CartView extends StatefulWidget {
             Container(
               height: 12.0,
             ),
-            LypsisButtonFW(text: "Checkout", onPressed: () {}),
+            LypsisButtonFW(text: "Checkout", onPressed: () => Get.to(const CheckoutView())),
           ],
         ),
       ),

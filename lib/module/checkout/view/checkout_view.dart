@@ -6,6 +6,8 @@ class CheckoutView extends StatefulWidget {
 
   Widget build(context, CheckoutController controller) {
     controller.view = this;
+    // * Fun fact: you need to initialize the CartController first, for example open the CartView first.
+    // * If You Directly Jump Into CheckoutView. You cannot use the CartController.instance , because it is not initialized yet.
     final cartController = CartController.instance;
 
     return Scaffold(
@@ -26,17 +28,16 @@ class CheckoutView extends StatefulWidget {
                 itemCount: 3,
                 physics: const ScrollPhysics(),
                 itemBuilder: (BuildContext context, int index) {
-                  return Card(
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundColor: Colors.grey[200],
-                        backgroundImage: const NetworkImage(
-                          "https://i.ibb.co/QrTHd59/woman.jpg",
-                        ),
-                      ),
-                      title: const Text("Jessica Doe"),
-                      subtitle: const Text("Programmer"),
+                  var item = cartController.products[index];
+                  double total = item["price"] * item["qty"];
+                  return ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.grey[200],
+                      backgroundImage: NetworkImage(item['photo']),
                     ),
+                    title: Text(item["product_name"]),
+                    subtitle: Text("QTY : ${item['qty']}  Price: \$${item['price']}"),
+                    trailing: Text("\$$total"),
                   );
                 },
               ),

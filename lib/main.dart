@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
       // home: ProductDetailView(item: itemProduct),
       // home: const RegisterView(),
       home: const CartView(),
+      // home: const CheckoutView(),
     );
   }
 }
