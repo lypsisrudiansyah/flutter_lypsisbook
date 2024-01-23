@@ -34,6 +34,7 @@ class OrderListController extends State<OrderListView> {
       },
       "status": "Processing",
       "total": 120.95,
+      "created_at": "2024-01-24 08:00:00",
       "items": [
         {
           "id": 1,
@@ -65,6 +66,7 @@ class OrderListController extends State<OrderListView> {
       },
       "status": "Shipped",
       "total": 45.75,
+      "created_at": "2024-01-25 14:30:00",
       "items": [
         {
           "id": 3,
@@ -96,6 +98,7 @@ class OrderListController extends State<OrderListView> {
       },
       "status": "Delivered",
       "total": 70.50,
+      "created_at": "2024-01-26 10:15:00",
       "items": [
         {
           "id": 5,
@@ -127,6 +130,7 @@ class OrderListController extends State<OrderListView> {
       },
       "status": "Canceled",
       "total": 30.0,
+      "created_at": "2024-01-27 18:45:00",
       "items": [
         {
           "id": 7,
@@ -158,6 +162,7 @@ class OrderListController extends State<OrderListView> {
       },
       "status": "Processing",
       "total": 85.20,
+      "created_at": "2024-01-28 09:30:00",
       "items": [
         {
           "id": 9,
@@ -189,6 +194,7 @@ class OrderListController extends State<OrderListView> {
       },
       "status": "Shipped",
       "total": 75.0,
+      "created_at": "2024-01-29 16:20:00",
       "items": [
         {
           "id": 11,
@@ -220,6 +226,7 @@ class OrderListController extends State<OrderListView> {
       },
       "status": "Delivered",
       "total": 53.45,
+      "created_at": "2024-01-30 12:45:00",
       "items": [
         {
           "id": 13,

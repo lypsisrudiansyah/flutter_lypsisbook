@@ -29,7 +29,7 @@ class OrderListView extends StatefulWidget {
         ),
         body: TabBarView(
           children: [
-            const OrderListPendingItems(),
+            OrderListPendingItems(items: controller.orderList),
             Container(
               color: Colors.green[100],
             ),

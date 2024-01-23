@@ -35,13 +35,14 @@ dependencies:
   flutter_animate: ^4.2.0+1
   flutter_rating_bar: ^4.0.1
   google_fonts: ^4.0.4
+  intl: ^0.18.1
   material_design_icons_flutter: ^7.0.7296
 
 dev_dependencies:
-  mockito: 5.4.0
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
+  mockito: 5.4.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
