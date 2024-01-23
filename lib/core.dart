@@ -5,10 +5,13 @@ it means you have to rename it to something more unique.
 */
 export 'package:flutter_lypsisbook/module/cart/controller/cart_controller.dart';
 export 'package:flutter_lypsisbook/module/cart/view/cart_view.dart';
+export 'package:flutter_lypsisbook/module/cart/widget/cart_product_grid_view_item.dart';
+export 'package:flutter_lypsisbook/module/cart/widget/cart_product_list_view_item.dart';
 export 'package:flutter_lypsisbook/module/change_password/controller/change_password_controller.dart';
 export 'package:flutter_lypsisbook/module/change_password/view/change_password_view.dart';
 export 'package:flutter_lypsisbook/module/checkout/controller/checkout_controller.dart';
 export 'package:flutter_lypsisbook/module/checkout/view/checkout_view.dart';
+export 'package:flutter_lypsisbook/module/checkout/widget/checkout_option.dart';
 export 'package:flutter_lypsisbook/module/dashboard/controller/dashboard_controller.dart';
 export 'package:flutter_lypsisbook/module/dashboard/view/dashboard_view.dart';
 export 'package:flutter_lypsisbook/module/dashboard2/controller/dashboard2_controller.dart';
@@ -23,6 +26,10 @@ export 'package:flutter_lypsisbook/module/login/controller/login_controller.dart
 export 'package:flutter_lypsisbook/module/login/view/login_view.dart';
 export 'package:flutter_lypsisbook/module/main_navigation/controller/main_navigation_controller.dart';
 export 'package:flutter_lypsisbook/module/main_navigation/view/main_navigation_view.dart';
+export 'package:flutter_lypsisbook/module/order_detail/controller/order_detail_controller.dart';
+export 'package:flutter_lypsisbook/module/order_detail/view/order_detail_view.dart';
+export 'package:flutter_lypsisbook/module/order_list/controller/order_list_controller.dart';
+export 'package:flutter_lypsisbook/module/order_list/view/order_list_view.dart';
 export 'package:flutter_lypsisbook/module/product_detail/controller/product_detail_controller.dart';
 export 'package:flutter_lypsisbook/module/product_detail/view/product_detail_view.dart';
 export 'package:flutter_lypsisbook/module/product_list/controller/product_list_controller.dart';

@@ -7,7 +7,9 @@
         "product_detail",
         "edit_profile",
         "cart",
-        "checkout"
+        "checkout",
+        "order_list",
+        "order_detail"
     ],
     "module_directory_name": "module",
     "experimental_mode": false,
