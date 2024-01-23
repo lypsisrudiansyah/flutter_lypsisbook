@@ -18,12 +18,12 @@ class MyApp extends StatelessWidget {
       navigatorKey: Get.navigatorKey,
       theme: MainTheme.getTheme(),
       debugShowCheckedModeBanner: false,
-      // home: const SplashView(),
+      home: const SplashView(),
       // home: const LoginView(),
       // home: const MainNavigationView(),
       // home: ProductDetailView(item: itemProduct),
       // home: const RegisterView(),
-      home: const CartView(),
+      // home: const CartView(),
       // home: const CheckoutView(),
     );
   }

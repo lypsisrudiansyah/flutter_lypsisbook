@@ -16,7 +16,7 @@ class LoginView extends StatefulWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              flex: 15,
+              flex: 10,
               child: SingleChildScrollView(
                 child: Container(
                   padding: const EdgeInsets.all(10.0),
@@ -94,13 +94,16 @@ class LoginView extends StatefulWidget {
             ),
             Flexible(
               flex: 1,
-              child: LypsisButtonFW(
-                text: "Sign Up ",
-                color: disabledColor,
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterView()));
-                },
-                textColor: disabledTextColor,
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: LypsisButtonFW(
+                  text: "Sign Up ",
+                  color: disabledColor,
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterView()));
+                  },
+                  textColor: disabledTextColor,
+                ),
               ),
             )
           ],

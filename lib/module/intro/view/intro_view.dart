@@ -48,7 +48,7 @@ class IntroView extends StatefulWidget {
 
                   return SizedBox(
                     // color: Colors.red,
-                    height: MediaQuery.of(context).size.height * 0.9,
+                    height: MediaQuery.of(context).size.height * 0.8,
                     child: Column(
                       children: [
                         Expanded(
@@ -127,7 +127,7 @@ class IntroView extends StatefulWidget {
                     ),
                   );
                 }),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.07),
                 LypsisButtonFW(
                   text: "Next",
                   // controller.carouselController
