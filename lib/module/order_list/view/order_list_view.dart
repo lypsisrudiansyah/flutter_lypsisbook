@@ -1,24 +1,42 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
+import 'package:flutter_lypsisbook/module/order_list/widget/order_list_pending_items.dart';
 import '../controller/order_list_controller.dart';
 
 class OrderListView extends StatefulWidget {
   const OrderListView({Key? key}) : super(key: key);
 
   Widget build(context, OrderListController controller) {
-  controller.view = this;
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("OrderList"),
-        actions: const [],
+    controller.view = this;
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: const TabBar(
+            tabs: [
+              Tab(
+                text: "Pending",
+              ),
+              Tab(
+                text: "Ongoing",
+              ),
+              Tab(
+                text: "Done",
+              ),
+            ],
+          ),
+          title: const Text('Order List'),
         ),
-        body: SingleChildScrollView(
-        child: Container(
-            padding: const EdgeInsets.all(10.0),
-            child: Column(
-            children: const [],
+        body: TabBarView(
+          children: [
+            const OrderListPendingItems(),
+            Container(
+              color: Colors.green[100],
             ),
+            Container(
+              color: Colors.blue[100],
+            ),
+          ],
         ),
       ),
     );
@@ -27,4 +45,3 @@ class OrderListView extends StatefulWidget {
   @override
   State<OrderListView> createState() => OrderListController();
 }
-    

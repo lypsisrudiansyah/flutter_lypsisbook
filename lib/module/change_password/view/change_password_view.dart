@@ -9,7 +9,7 @@ class ChangePasswordView extends StatefulWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("ChangePassword"),
+        title: const Text("Change Password"),
         actions: const [],
       ),
       body: SingleChildScrollView(

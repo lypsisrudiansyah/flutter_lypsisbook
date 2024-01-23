@@ -11,7 +11,7 @@ class EditProfileView extends StatefulWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("EditProfile"),
+        title: const Text("Edit Profile"),
         actions: [
           IconButton(
             onPressed: () {},
