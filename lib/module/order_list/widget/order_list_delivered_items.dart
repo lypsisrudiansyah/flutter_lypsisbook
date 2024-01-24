@@ -18,7 +18,9 @@ class OrderListDeliveredItems extends StatelessWidget {
         var item = items[index];
 
         return InkWell(
-          onTap: () => Get.to(const OrderDetailView()),
+          onTap: () => Get.to(OrderDetailView(
+            orderItem: item,
+          )),
           child: Container(
             padding: const EdgeInsets.all(15.0),
             decoration: BoxDecoration(
@@ -40,25 +42,25 @@ class OrderListDeliveredItems extends StatelessWidget {
                             "#${item["id"]}",
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 16.0,
+                              fontSize: 18.0,
                             ),
                           ),
                           Text(
                             DateFormat('dd MMMM y kk:mm').format(DateTime.parse(item['created_at'])),
                             style: const TextStyle(
-                              fontSize: 13.0,
+                              fontSize: 14.0,
                             ),
                           ),
                           Text(
                             "${item['payment_method']['name'] ?? '-'}",
                             style: const TextStyle(
-                              fontSize: 13.0,
+                              fontSize: 14.0,
                             ),
                           ),
                           Text(
                             "${item['courier']['name'] ?? '-'}",
                             style: const TextStyle(
-                              fontSize: 13.0,
+                              fontSize: 14.0,
                             ),
                           ),
                         ],

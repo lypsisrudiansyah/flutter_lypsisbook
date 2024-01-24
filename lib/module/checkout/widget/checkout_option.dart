@@ -6,7 +6,8 @@ class CheckoutOption extends StatelessWidget {
   final String title;
   final String subtitle1;
   final String? subtitle2;
-  const CheckoutOption({Key? key, required this.title, required this.subtitle1, this.subtitle2}) : super(key: key);
+  bool? dividerHide = false;
+  CheckoutOption({Key? key, required this.title, required this.subtitle1, this.subtitle2, this.dividerHide}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,7 @@ class CheckoutOption extends StatelessWidget {
             size: 24.0,
           ),
         ),
-        const Divider(height: 1),
+        dividerHide == true ? const SizedBox() : const Divider(height: 1),
       ],
     );
   }
