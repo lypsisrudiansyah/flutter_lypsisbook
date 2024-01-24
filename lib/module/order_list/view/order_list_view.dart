@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
+import 'package:flutter_lypsisbook/module/order_list/widget/order_list_delivered_items.dart';
 import 'package:flutter_lypsisbook/module/order_list/widget/order_list_pending_items.dart';
+import 'package:flutter_lypsisbook/module/order_list/widget/order_list_shipped_items.dart';
 import '../controller/order_list_controller.dart';
 
 class OrderListView extends StatefulWidget {
@@ -18,10 +20,10 @@ class OrderListView extends StatefulWidget {
                 text: "Pending",
               ),
               Tab(
-                text: "Ongoing",
+                text: "Shipped",
               ),
               Tab(
-                text: "Done",
+                text: "Delivered",
               ),
             ],
           ),
@@ -29,13 +31,9 @@ class OrderListView extends StatefulWidget {
         ),
         body: TabBarView(
           children: [
-            OrderListPendingItems(items: controller.orderList),
-            Container(
-              color: Colors.green[100],
-            ),
-            Container(
-              color: Colors.blue[100],
-            ),
+            OrderListPendingItems(items: controller.orderList.where((element) => element['status'] == "Pending").toList()),
+            OrderListShippedItems(items: controller.orderList),
+            OrderListDeliveredItems(items: controller.orderList),
           ],
         ),
       ),
