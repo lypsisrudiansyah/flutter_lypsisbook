@@ -326,6 +326,43 @@ class OrderListController extends State<OrderListView> {
         {"id": 17, "product_name": "AirPods Pro", "qty": 1, "price": 42.99},
         {"id": 18, "product_name": "Apple Watch Series 7", "qty": 1, "price": 0.0}
       ]
+    },
+    {
+      "id": 12,
+      "shipping_address": {"name": "John Smith", "detail": "456 Oak St, Anytown, USA"},
+      "courier": {"name": "FedEx", "detail": "Next-Day Delivery"},
+      "payment_method": {"name": "Credit Card", "detail": "**** **** **** 1234"},
+      "status": "Delivered",
+      "total": 99.99,
+      "created_at": "2024-02-01 09:30:00",
+      "items": [
+        {"id": 15, "product_name": "Samsung Galaxy S21", "qty": 2, "price": 49.99}
+      ]
+    },
+    {
+      "id": 13,
+      "shipping_address": {"name": "Emily Johnson", "detail": "789 Elm St, Othertown, USA"},
+      "courier": {"name": "UPS", "detail": "Standard Delivery"},
+      "payment_method": {"name": "Apple Pay", "detail": "applepay@example.com"},
+      "status": "Delivered",
+      "total": 75.0,
+      "created_at": "2024-02-03 15:20:00",
+      "items": [
+        {"id": 16, "product_name": "iPhone 13", "qty": 1, "price": 75.0}
+      ]
+    },
+    {
+      "id": 14,
+      "shipping_address": {"name": "Michael Brown", "detail": "123 Pine St, Anothertown, USA"},
+      "courier": {"name": "USPS", "detail": "Standard Delivery"},
+      "payment_method": {"name": "Google Pay", "detail": "googlepay@example.com"},
+      "status": "Delivered",
+      "total": 42.99,
+      "created_at": "2024-02-05 18:10:00",
+      "items": [
+        {"id": 17, "product_name": "AirPods Pro", "qty": 1, "price": 42.99},
+        {"id": 18, "product_name": "Apple Watch Series 7", "qty": 1, "price": 0.0}
+      ]
     }
   ];
 }
