@@ -11,7 +11,7 @@ class OrderListPendingItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: 3,
+        itemCount: items.length,
         physics: const ScrollPhysics(),
         itemBuilder: (BuildContext context, int index) {
           var item = items[index];

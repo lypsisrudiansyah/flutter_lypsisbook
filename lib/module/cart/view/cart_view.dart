@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lypsisbook/core.dart';
-import 'package:flutter_lypsisbook/module/cart/widget/cart_product_grid_view_item.dart';
-import 'package:flutter_lypsisbook/module/cart/widget/cart_product_list_view_item.dart';
 
 class CartView extends StatefulWidget {
   const CartView({Key? key}) : super(key: key);
@@ -133,7 +131,7 @@ class CartView extends StatefulWidget {
                 child: GridView.builder(
                   padding: EdgeInsets.zero,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    childAspectRatio: 1.0 / 1.3,
+                    childAspectRatio: 1.0 / 1.5,
                     crossAxisCount: 2,
                     mainAxisSpacing: 6,
                     crossAxisSpacing: 6,
