@@ -31,9 +31,9 @@ class OrderListView extends StatefulWidget {
         ),
         body: TabBarView(
           children: [
-            OrderListPendingItems(items: controller.orderList.where((element) => element['status'] == "Pending").toList()),
-            OrderListShippedItems(items: controller.orderList.where((element) => element['status'] == "Shipped").toList()),
-            OrderListDeliveredItems(items: controller.orderList.where((element) => element['status'] == "Delivered").toList()),
+            OrderListPendingItems(items: controller.getOrdersByStatus("Pending")),
+            OrderListShippedItems(items: controller.getOrdersByStatus("Shipped")),
+            OrderListDeliveredItems(items: controller.getOrdersByStatus("Delivered")),
           ],
         ),
       ),

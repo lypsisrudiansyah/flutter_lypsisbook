@@ -365,4 +365,8 @@ class OrderListController extends State<OrderListView> {
       ]
     }
   ];
+
+  List<Map<String, dynamic>> getOrdersByStatus(String status) {
+    return orderList.where((element) => element['status'] == status).toList();
+  }
 }
